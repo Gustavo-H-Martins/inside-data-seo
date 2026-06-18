@@ -322,13 +322,15 @@ def build_full_html(article_body: str, meta: dict) -> str:
 SYSTEM_PROMPT = """Você é especialista em SEO e content marketing B2B de tecnologia de dados no Brasil.
 A empresa é a Inside Data — consultoria de Arquitetura, Engenharia e Governança de Dados, agnóstica em cloud (AWS/Azure/GCP).
 Tom: consultivo, técnico, executivo. Target: Diretores e Heads de Dados.
-Identidade visual: background navy #0D1B2A, destaque cyan #00BCD4, texto #2d3748.
+Identidade visual: background black ##000000, destaque navy #21bae7, texto #ffffff
 Contato: contato@grupolmtech.com.br | (31) 98640-2114 | grupolmtech.com.br/insidedata
 
 IMPORTANTE: Retorne APENAS o corpo interno do artigo em HTML puro — sem DOCTYPE, sem <html>, sem <head>, sem <body>, sem <nav>, sem <footer>.
 Retorne somente o conteúdo que vai dentro do <div class="article-body">.
 Use as classes CSS disponíveis: intro-highlight, insight-box, insight-label, cta-section, cta-button, cta-button-sec.
-NÃO use markdown. NÃO use fences de código. Retorne HTML direto."""
+NÃO use markdown. NÃO use fences de código. Retorne HTML direto. não use travessões ou aspas para destacar palavras. Seja direto e objetivo, sem rodeios, use linguagem simples e clara, focada em transmitir valor para o leitor executivo interessado em dados e cloud.
+o perfil de leitor que vamos atrair é de executivos e gestores de dados, cloud e tecnologia, que buscam soluções práticas e estratégicas para seus desafios de dados.
+O artigo deve ser otimizado para SEO, com foco na keyword principal, e conter uma estrutura clara e escaneável, com introdução, desenvolvimento em seções e conclusão com CTA."""
 
 def call_deepseek(user_prompt: str) -> str:
     client = OpenAI(
@@ -431,19 +433,19 @@ def send_email(html: str, subject: str) -> tuple[bool, str]:
 def render_article_actions(key_prefix: str, idea_title: str, idea_slug: str, html: str):
     col_ftp, col_mail, col_both, col_dl = st.columns(4)
     with col_ftp:
-        if st.button("💾 DEPLOY FTP", key=f"{key_prefix}_ftp"):
+        if st.button("DEPLOY FTP", key=f"{key_prefix}_ftp"):
             with st.spinner("Enviando para Locaweb..."):
                 ok, result = deploy_ftp(html, idea_slug)
                 if ok: st.success(f"✓ Publicado! [Ver artigo]({result})")
                 else:  st.error(f"FTP: {result}")
     with col_mail:
-        if st.button("📧 ENVIAR E-MAIL", key=f"{key_prefix}_mail"):
+        if st.button("ENVIAR E-MAIL", key=f"{key_prefix}_mail"):
             with st.spinner("Enviando..."):
                 ok, result = send_email(html, f"[Inside Data SEO] {idea_title}")
                 if ok: st.success(f"✓ Enviado para {result}")
                 else:  st.error(f"SMTP: {result}")
     with col_both:
-        if st.button("🚀 DEPLOY + E-MAIL", key=f"{key_prefix}_both"):
+        if st.button("DEPLOY + E-MAIL", key=f"{key_prefix}_both"):
             with st.spinner("Salvando e enviando..."):
                 ok1, r1 = deploy_ftp(html, idea_slug)
                 ok2, r2 = send_email(html, f"[Inside Data SEO] {idea_title}")
@@ -471,11 +473,11 @@ st.markdown("""
 # TABS
 # ══════════════════════════════════════════════════════════════════════════════
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "📊 Visão Geral",
-    "🏢 Concorrentes",
-    "✍️ Pautas SEO",
-    "💬 Gerar Artigo Livre",
-    "🎨 Brand Brief",
+    "Visão Geral",
+    "Concorrentes",
+    "Pautas SEO",
+    "Gerar Artigo Livre",
+    "Brand Brief",
 ])
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -510,7 +512,7 @@ with tab2:
         c3.markdown(f"<div style='font-family:Space Mono,monospace;color:#00BCD4;font-weight:700;font-size:18px;text-align:center'>{c['da']}</div><div style='color:#7FA8BE;font-size:10px;text-align:center'>Domain Auth.</div>", unsafe_allow_html=True)
         c4.markdown(threat_badge(c["threat"]), unsafe_allow_html=True)
         st.markdown("<hr style='border-color:rgba(0,188,212,0.1);margin:8px 0'>", unsafe_allow_html=True)
-    st.markdown("""<div class="insight"><h4>💡 Insight Estratégico</h4>
+    st.markdown("""<div class="insight"><h4> Insight Estratégico</h4>
       <p style="font-size:14px;line-height:1.7">KPMG, Deloitte e Accenture dominam termos genéricos mas raramente produzem
       conteúdo técnico profundo em PT-BR sobre implementações reais. A Inside Data tem vantagem em
       <strong style="color:#00BCD4">especificidade técnica + linguagem executiva BR</strong> — um gap que o conteúdo SEO deve explorar.</p>
