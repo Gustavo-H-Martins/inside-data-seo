@@ -5,7 +5,7 @@ deploy FTP direto na Locaweb e envio via SMTP.
 """
 
 import streamlit as st
-import anthropic
+from openai import OpenAI
 import ftplib
 import smtplib
 import ssl
@@ -195,18 +195,25 @@ def threat_badge(level: str) -> str:
 
 # ─── Claude API ───────────────────────────────────────────────────────────────
 def generate_article(idea: dict) -> str:
-    client = anthropic.Anthropic(api_key=st.secrets["anthropic"]["api_key"])
-    msg = client.messages.create(
-        model="claude-sonnet-4-20250514",
+    client = OpenAI(
+        api_key=st.secrets["deepseek"]["api_key"],
+        base_url="https://api.deepseek.com/v1",
+    )
+    response = client.chat.completions.create(
+        model="deepseek-v4-pro",
         max_tokens=2000,
-        system="""Você é especialista em SEO e content marketing B2B de tecnologia de dados no Brasil.
+        messages=[
+            {
+                "role": "system",
+                "content": """Você é especialista em SEO e content marketing B2B de tecnologia de dados no Brasil.
 A empresa é a Inside Data — consultoria de Arquitetura, Engenharia e Governança de Dados, agnóstica em cloud (AWS/Azure/GCP).
 Tom: consultivo, técnico, executivo. Target: Diretores e Heads de Dados.
 RETORNE APENAS HTML COMPLETO E PUBLICÁVEL — sem markdown, sem explicações, sem backticks.
 HTML standalone com CSS inline, identidade visual navy #0D1B2A + cyan #00BCD4, fonte system-ui, responsivo.""",
-        messages=[{
-            "role": "user",
-            "content": f"""Gere um artigo de blog HTML completo sobre: "{idea['title']}"
+            },
+            {
+                "role": "user",
+                "content": f"""Gere um artigo de blog HTML completo sobre: "{idea['title']}"
 Keyword: "{idea['keyword']}" | Intenção: {idea['intent']} | Categoria: {idea['category']}
 
 Estrutura obrigatória:
@@ -219,10 +226,11 @@ Estrutura obrigatória:
 - Footer: "Inside Data Consultoria | grupolmtech.com.br/insidedata"
 - Design responsivo, identidade visual navy/cyan
 
-Retorne SOMENTE o HTML, começando com <!DOCTYPE html>."""
-        }]
+Retorne SOMENTE o HTML, começando com <!DOCTYPE html>.""",
+            },
+        ],
     )
-    return msg.content[0].text
+    return response.choices[0].message.content
 
 # ─── FTP Deploy ───────────────────────────────────────────────────────────────
 def deploy_ftp(html: str, slug: str) -> tuple[bool, str]:
