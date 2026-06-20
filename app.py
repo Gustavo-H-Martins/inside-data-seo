@@ -212,7 +212,32 @@ ARTICLE_HTML_TEMPLATE = """<!DOCTYPE html>
     .text-center{{text-align:center}}
     .mt-0{{margin-top:0}}
     .mb-0{{margin-bottom:0}}
+
+    /* ── MERMAID DIAGRAMS ── */
+    .diagram-card{{background:#0a0a0a;border:1px solid rgba(33,186,231,.14);border-radius:16px;padding:32px 24px;margin:32px 0;overflow-x:auto}}
+    .diagram-card .mermaid{{display:flex;justify-content:center}}
+    .diagram-card .mermaid svg{{max-width:100%;height:auto}}
+    .diagram-caption{{text-align:center;color:#888;font-size:.85rem;margin-top:16px;font-style:italic}}
+    .diagram-label{{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#21bae7;margin-bottom:8px;background:rgba(33,186,231,.08);padding:4px 10px;border-radius:4px}}
+
+    /* ── MERMAID THEME OVERRIDES ── */
+    .mermaid .node rect,.mermaid .node circle,.mermaid .node polygon{{fill:#141414!important;stroke:rgba(33,186,231,.30)!important}}
+    .mermaid .edgePath .path{{stroke:rgba(33,186,231,.40)!important}}
+    .mermaid .edgeLabel rect{{fill:#0a0a0a!important}}
+    .mermaid .edgeLabel span{{color:#bfbfbf!important}}
+    .mermaid .nodeLabel,.mermaid .node text{{fill:#ffffff!important}}
+    .mermaid .cluster rect{{fill:#0a0a0a!important;stroke:rgba(33,186,231,.18)!important}}
+    .mermaid .cluster text,.mermaid .cluster span{{fill:#21bae7!important}}
+    .mermaid .titleText{{fill:#ffffff!important}}
+    .mermaid g.stateGroup rect{{fill:#141414!important;stroke:rgba(33,186,231,.25)!important}}
+    .mermaid g.stateGroup text{{fill:#ffffff!important}}
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){{
+      mermaid.initialize({{startOnLoad:true,theme:'dark',themeVariables:{{primaryColor:'#141414',primaryBorderColor:'rgba(33,186,231,.30)',primaryTextColor:'#ffffff',lineColor:'rgba(33,186,231,.40)',secondaryColor:'#0a0a0a',tertiaryColor:'#141414'}},securityLevel:'loose'}});
+    }});
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 </head>
 <body>
 
@@ -292,6 +317,7 @@ ARTICLE_HTML_TEMPLATE = """<!DOCTYPE html>
   </div>
 </footer>
 
+<script>mermaid.initialize({{startOnLoad:true,theme:'dark',securityLevel:'loose'}});</script>
 </body>
 </html>"""
 
@@ -660,26 +686,55 @@ Gere o conteúdo nesta ordem exata, usando as classes CSS fornecidas:
    - <h2> abordagem metodológica
    - Exemplos de diagnóstico e intervenção
 
-5. ATUAÇÃO INSIDE DATA — <section class="section section-dark"><div class="container">:
+4.5 ARQUITETURA & DIAGRAMAS — <section class="section section-dark"><div class="container">:
+   - <p class="section-label">ARQUITETURA</p>
+   - <h2> título contextual (ex: "Fluxo de Dados Recomendado", "Arquitetura-Alvo")
+   - <div class="diagram-card"> contendo <div class="mermaid"> com diagrama Mermaid.js
+   - <p class="diagram-caption"> legenda explicativa do diagrama
+   - OBS: gere SEMPRE pelo menos 1 diagrama Mermaid relevante ao tema. Escolha o tipo certo:
+     • graph LR/TB — para fluxos de dados, pipelines, arquiteturas
+     • flowchart LR/TB — para processos de decisão, esteiras CI/CD
+     • sequenceDiagram — para interações entre sistemas
+     • stateDiagram-v2 — para ciclo de vida de dados
+   - Use edge labels (-- Texto -->) para explicar o que trafega em cada etapa
+   - Use subgraphs para agrupar domínios (ex: "Camada de Ingestão", "Camada de Processamento")
+   - Exemplo de sintaxe Mermaid:
+     <div class="mermaid">
+     graph LR
+       subgraph "Ingestão"
+         ADF[Azure Data Factory] --> B[ADLS Gen2 - Raw]
+       end
+       subgraph "Processamento"
+         B --> C[Databricks - Bronze]
+         C --> D[Databricks - Silver]
+         D --> E[Databricks - Gold]
+       end
+       subgraph "Consumo"
+         E --> F[Power BI]
+         E --> G[ML Models]
+       end
+     </div>
+
+5. ATUAÇÃO INSIDE DATA — <section class="section"><div class="container">:
    - <p class="section-label">COMO A INSIDE DATA ATUA</p>
    - <h2> metodologia e diferenciais
    - Grid de serviços aplicáveis ao tema
 
-6. CASES — <section class="section"><div class="container">:
+6. CASES — <section class="section section-dark"><div class="container">:
    - <p class="section-label">CENÁRIOS REAIS</p>
    - <h2> situações que encontramos
    - 2-3 parágrafos com cenários de campo (sem nomes de clientes)
 
-7. BENEFÍCIOS — <section class="section section-dark"><div class="container">:
+7. BENEFÍCIOS — <section class="section"><div class="container">:
    - <p class="section-label">RESULTADOS ESPERADOS</p>
    - Grid de 3-4 benefícios com métricas
 
-8. CTA PRINCIPAL — <section class="section"><div class="container">:
+8. CTA PRINCIPAL — <section class="section section-dark"><div class="container">:
    - <div class="cta-block"> com h2, parágrafo e 2 botões:
    - <a class="cta-button" href="https://grupolmtech.com.br/insidedata#contact">Agendar diagnóstico</a>
    - <a class="cta-button-ghost" href="https://grupolmtech.com.br/insidedata#services">Conhecer serviços</a>
 
-9. FAQ — <section class="section section-dark"><div class="container">:
+9. FAQ — <section class="section"><div class="container">:
    - <p class="section-label">PERGUNTAS FREQUENTES</p>
    - 4-5 perguntas e respostas em formato <details><summary>
 
@@ -692,7 +747,16 @@ Gere o conteúdo nesta ordem exata, usando as classes CSS fornecidas:
 
 • HTML válido e semanticamente correto
 • Todas as classes CSS devem ser as fornecidas pelo template
+• DIAGRAMAS MERMAID: gere SEMPRE pelo menos 1 diagrama na seção 4.5. Use sintaxe Mermaid.js
+  dentro de <div class="mermaid">. Não use fences de código (```mermaid). O HTML com <div class="mermaid">
+  já é suficiente para o Mermaid renderizar. Prefira graph, flowchart ou sequenceDiagram.
+  NUNCA use sintaxe de outras ferramentas (PlantUML, Graphviz, etc.) — apenas Mermaid.js.
 • Imagens: usar apenas a logo fornecida. Não inventar imagens.
+• Links: sempre abrir na mesma aba (não usar target="_blank" exceto em redes sociais)
+• NÃO usar markdown. NÃO usar fences de código (```). Retorne APENAS HTML.
+• Não usar emojis no conteúdo (apenas nos metadados de data se apropriado)
+• Não usar &nbsp; ou &mdash; como muletas de espaçamento
+• O conteúdo deve ter entre 1500 e 2500 palavras
 • Links: sempre abrir na mesma aba (não usar target="_blank" exceto em redes sociais)
 • NÃO usar markdown. NÃO usar fences de código (```). Retorne APENAS HTML.
 • Não usar emojis no conteúdo (apenas nos metadados de data se apropriado)
