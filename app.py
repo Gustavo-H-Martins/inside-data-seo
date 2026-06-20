@@ -29,69 +29,69 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
 html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
-.stApp { background-color: #0D1B2A; color: #E8F4F8; }
+.stApp { background-color: #000000; color: #ffffff; }
 #MainMenu, footer, header { visibility: hidden; }
 .block-container { padding-top: 1.5rem; padding-bottom: 2rem; }
 
 .id-header {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 0 20px 0; border-bottom: 1px solid rgba(0,188,212,0.2); margin-bottom: 24px;
+    padding: 0 0 20px 0; border-bottom: 1px solid rgba(33,186,231,0.18); margin-bottom: 24px;
 }
-.id-logo { font-family: 'Space Mono', monospace; font-size: 13px; color: #00BCD4; letter-spacing: 1.2px; display: flex; align-items: center; gap: 10px; }
-.id-dot  { width: 8px; height: 8px; border-radius: 50%; background: #00BCD4; box-shadow: 0 0 10px #00BCD4; display: inline-block; }
-.id-traffic { background: rgba(0,188,212,0.10); border: 1px solid rgba(0,188,212,0.2); border-radius: 8px; padding: 6px 16px; font-family: 'Space Mono', monospace; color: #00BCD4; font-size: 14px; font-weight: 700; }
+.id-logo { font-family: 'Space Mono', monospace; font-size: 13px; color: #21bae7; letter-spacing: 1.2px; display: flex; align-items: center; gap: 10px; }
+.id-dot  { width: 8px; height: 8px; border-radius: 50%; background: #21bae7; box-shadow: 0 0 10px #21bae7; display: inline-block; }
+.id-traffic { background: rgba(33,186,231,0.08); border: 1px solid rgba(33,186,231,0.18); border-radius: 8px; padding: 6px 16px; font-family: 'Space Mono', monospace; color: #21bae7; font-size: 14px; font-weight: 700; }
 
-.id-card     { background: #111F2E; border: 1px solid rgba(0,188,212,0.18); border-radius: 14px; padding: 22px; margin-bottom: 16px; }
-.id-card-alt { background: #162536; border: 1px solid rgba(0,188,212,0.12); border-radius: 12px; padding: 18px; margin-bottom: 12px; }
-.id-card-alt:hover { border-color: rgba(0,188,212,0.35); }
+.id-card     { background: #101010; border: 1px solid rgba(33,186,231,0.14); border-radius: 14px; padding: 22px; margin-bottom: 16px; }
+.id-card-alt { background: #141414; border: 1px solid rgba(33,186,231,0.10); border-radius: 12px; padding: 18px; margin-bottom: 12px; }
+.id-card-alt:hover { border-color: rgba(33,186,231,0.30); }
 
-.sec-title { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #7FA8BE; margin-bottom: 14px; }
+.sec-title { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #888888; margin-bottom: 14px; }
 
 .tbar-wrap  { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
-.tbar-track { flex: 1; height: 5px; background: rgba(255,255,255,.07); border-radius: 3px; overflow: hidden; }
-.tbar-fill  { height: 100%; border-radius: 3px; background: linear-gradient(90deg,#00BCD4,#4DD9EC); }
-.tbar-val   { font-family: 'Space Mono', monospace; color: #00BCD4; font-weight: 700; font-size: 13px; min-width: 56px; text-align: right; }
+.tbar-track { flex: 1; height: 5px; background: rgba(255,255,255,.06); border-radius: 3px; overflow: hidden; }
+.tbar-fill  { height: 100%; border-radius: 3px; background: linear-gradient(90deg,#21bae7,#5cc8ee); }
+.tbar-val   { font-family: 'Space Mono', monospace; color: #21bae7; font-weight: 700; font-size: 13px; min-width: 56px; text-align: right; }
 
 .chip      { border-radius: 4px; padding: 2px 9px; font-size: 11px; font-weight: 600; display: inline-block; margin-right: 4px; }
-.chip-cat  { background: rgba(0,188,212,0.12); color: #00BCD4; }
-.chip-int  { background: rgba(255,255,255,.05); color: #7FA8BE; }
-.chip-diff { background: rgba(255,255,255,.05); color: #7FA8BE; }
+.chip-cat  { background: rgba(33,186,231,0.10); color: #21bae7; }
+.chip-int  { background: rgba(255,255,255,.04); color: #888888; }
+.chip-diff { background: rgba(255,255,255,.04); color: #888888; }
 
 .threat-high   { background: rgba(239,68,68,.15);  color: #F87171; border-radius: 4px; padding: 2px 10px; font-size: 11px; font-weight: 700; }
 .threat-medium { background: rgba(251,191,36,.15); color: #FCD34D; border-radius: 4px; padding: 2px 10px; font-size: 11px; font-weight: 700; }
 .threat-low    { background: rgba(52,211,153,.15); color: #6EE7B7; border-radius: 4px; padding: 2px 10px; font-size: 11px; font-weight: 700; }
 
-.insight { background: rgba(0,188,212,0.08); border: 1px solid rgba(0,188,212,0.2); border-radius: 10px; padding: 18px; margin-top: 16px; }
-.insight h4 { color: #00BCD4; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.insight { background: rgba(33,186,231,0.06); border: 1px solid rgba(33,186,231,0.14); border-radius: 10px; padding: 18px; margin-top: 16px; }
+.insight h4 { color: #21bae7; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
 
-.theme-item { display: flex; gap: 10px; padding: 10px 14px; background: rgba(0,188,212,.06); border: 1px solid rgba(0,188,212,0.18); border-radius: 8px; margin-bottom: 8px; }
-.theme-num  { font-family: 'Space Mono', monospace; font-size: 11px; color: #00BCD4; margin-top: 2px; }
+.theme-item { display: flex; gap: 10px; padding: 10px 14px; background: rgba(33,186,231,.04); border: 1px solid rgba(33,186,231,0.12); border-radius: 8px; margin-bottom: 8px; }
+.theme-num  { font-family: 'Space Mono', monospace; font-size: 11px; color: #21bae7; margin-top: 2px; }
 
 .swatch-row { display: flex; gap: 14px; flex-wrap: wrap; }
 .swatch     { text-align: center; }
-.swatch-box { width: 50px; height: 50px; border-radius: 10px; border: 2px solid rgba(255,255,255,.1); margin-bottom: 5px; }
-.swatch-name { color: #7FA8BE; font-size: 11px; }
-.swatch-hex  { font-family: 'Space Mono', monospace; color: #00BCD4; font-size: 10px; }
+.swatch-box { width: 50px; height: 50px; border-radius: 10px; border: 2px solid rgba(255,255,255,.08); margin-bottom: 5px; }
+.swatch-name { color: #888888; font-size: 11px; }
+.swatch-hex  { font-family: 'Space Mono', monospace; color: #21bae7; font-size: 10px; }
 
-div[data-testid="stTabs"] button { color: #7FA8BE !important; font-family: 'DM Sans', sans-serif !important; }
-div[data-testid="stTabs"] button[aria-selected="true"] { color: #00BCD4 !important; border-bottom-color: #00BCD4 !important; }
-div[data-testid="stTabs"] { border-bottom: 1px solid rgba(0,188,212,0.2); }
+div[data-testid="stTabs"] button { color: #888888 !important; font-family: 'DM Sans', sans-serif !important; }
+div[data-testid="stTabs"] button[aria-selected="true"] { color: #21bae7 !important; border-bottom-color: #21bae7 !important; }
+div[data-testid="stTabs"] { border-bottom: 1px solid rgba(33,186,231,0.14); }
 .stButton > button {
-    background: linear-gradient(135deg,#00BCD4,#0097A7) !important;
-    color: #0D1B2A !important; border: none !important;
+    background: #21bae7 !important;
+    color: #000000 !important; border: none !important;
     font-family: 'Space Mono', monospace !important; font-size: 11px !important;
     font-weight: 700 !important; letter-spacing: .5px !important; border-radius: 8px !important;
 }
 .stButton > button:hover { opacity: .85 !important; }
 div[data-testid="stTextArea"] textarea,
 div[data-testid="stTextInput"] input {
-    background: #162536 !important; border: 1px solid rgba(0,188,212,0.2) !important;
-    color: #E8F4F8 !important; border-radius: 8px !important;
+    background: #141414 !important; border: 1px solid rgba(33,186,231,0.14) !important;
+    color: #ffffff !important; border-radius: 8px !important;
 }
-div[data-testid="stMetric"] { background: #111F2E; border: 1px solid rgba(0,188,212,0.18); border-radius: 14px; padding: 16px; }
-div[data-testid="stMetric"] label { color: #7FA8BE !important; }
-div[data-testid="stMetric"] div[data-testid="stMetricValue"] { color: #00BCD4 !important; font-family: 'Space Mono', monospace !important; }
-div[data-testid="stChatMessage"] { background: #111F2E !important; border: 1px solid rgba(0,188,212,0.15) !important; border-radius: 12px !important; }
+div[data-testid="stMetric"] { background: #101010; border: 1px solid rgba(33,186,231,0.12); border-radius: 14px; padding: 16px; }
+div[data-testid="stMetric"] label { color: #888888 !important; }
+div[data-testid="stMetric"] div[data-testid="stMetricValue"] { color: #21bae7 !important; font-family: 'Space Mono', monospace !important; }
+div[data-testid="stChatMessage"] { background: #101010 !important; border: 1px solid rgba(33,186,231,0.10) !important; border-radius: 12px !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -104,74 +104,114 @@ ARTICLE_HTML_TEMPLATE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{seo_title} | Inside Data</title>
   <meta name="description" content="{meta_description}"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://grupolmtech.com.br/insidedata/blog/{slug}"/>
   <style>
-    *{{margin:0;padding:0;box-sizing:border-box}}
-    body{{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#f4f7fc;color:#1a202c;line-height:1.7;-webkit-font-smoothing:antialiased}}
+    *,*::before,*::after{{margin:0;padding:0;box-sizing:border-box}}
+    html{{scroll-behavior:smooth}}
+    body{{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#000;color:#fff;line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}}
 
-    /* NAV */
-    nav{{background:#0D1B2A;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,188,212,0.15)}}
-    .nav-logo img{{height:36px}}
-    .nav-links{{display:flex;gap:28px;list-style:none}}
-    .nav-links a{{color:#7FA8BE;text-decoration:none;font-size:14px;font-weight:500;transition:.2s}}
-    .nav-links a:hover{{color:#00BCD4}}
-    .nav-cta{{background:#00BCD4;color:#0D1B2A!important;padding:8px 20px;border-radius:50px;font-weight:700!important;font-size:13px!important}}
-    @media(max-width:700px){{.nav-links{{display:none}}}}
+    /* ── NAV ── */
+    nav{{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(33,186,231,.12);padding:0 max(5vw,24px);display:flex;align-items:center;justify-content:space-between;height:64px}}
+    .nav-logo img{{height:32px;width:auto;object-fit:contain}}
+    .nav-links{{display:flex;gap:28px;list-style:none;align-items:center}}
+    .nav-links a{{color:#bfbfbf;text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}}
+    .nav-links a:hover{{color:#21bae7}}
+    .nav-cta{{background:#21bae7!important;color:#000!important;padding:8px 20px;border-radius:50px;font-weight:700!important;font-size:13px!important;transition:opacity .2s}}
+    .nav-cta:hover{{opacity:.85}}
+    @media(max-width:768px){{.nav-links{{display:none}}}}
 
-    /* HERO */
-    .hero{{background:linear-gradient(135deg,#0D1B2A 0%,#162536 60%,#0D1B2A 100%);padding:64px 5% 48px;border-bottom:1px solid rgba(0,188,212,0.15)}}
-    .hero-inner{{max-width:860px;margin:0 auto}}
-    .hero-badge{{display:inline-block;background:rgba(0,188,212,0.12);color:#00BCD4;border:1px solid rgba(0,188,212,0.3);border-radius:50px;padding:4px 14px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}}
-    .hero h1{{font-size:2.4rem;font-weight:700;color:#E8F4F8;line-height:1.25;letter-spacing:-0.02em;margin-bottom:16px}}
-    .hero h1 span{{color:#00BCD4}}
-    .hero-meta{{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:#7FA8BE}}
-    .hero-meta span{{display:flex;align-items:center;gap:6px}}
-    @media(max-width:600px){{.hero h1{{font-size:1.7rem}}}}
+    /* ── HERO ── */
+    .hero{{padding:80px max(5vw,24px) 64px;border-bottom:1px solid rgba(33,186,231,.10);background:linear-gradient(180deg,#000 0%,#0a0a0a 100%)}}
+    .hero-inner{{max-width:960px;margin:0 auto}}
+    .hero-badge{{display:inline-block;background:rgba(33,186,231,.10);color:#21bae7;border:1px solid rgba(33,186,231,.22);border-radius:50px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:24px}}
+    .hero h1{{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:700;color:#fff;line-height:1.2;letter-spacing:-0.02em;margin-bottom:16px}}
+    .hero h1 span{{color:#21bae7}}
+    .hero-subtitle{{font-size:1.1rem;color:#bfbfbf;line-height:1.6;margin-bottom:24px;max-width:680px}}
+    .hero-meta{{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:#888}}
 
-    /* ARTICLE BODY */
-    .article-wrap{{max-width:860px;margin:0 auto;padding:48px 24px 64px}}
-    .article-body{{background:#fff;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.06);padding:2.8rem}}
-    @media(max-width:600px){{.article-body{{padding:1.6rem 1.2rem}}}}
+    /* ── SECTIONS ── */
+    .section{{padding:80px max(5vw,24px)}}
+    .section-dark{{background:#0a0a0a}}
+    .container{{max-width:960px;margin:0 auto}}
 
-    h2{{font-size:1.75rem;font-weight:700;color:#0D1B2A;margin:2.4rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid #e2e8f0;position:relative}}
-    h2::after{{content:"";display:block;width:56px;height:4px;background:#00BCD4;margin-top:.5rem;border-radius:4px}}
-    h3{{font-size:1.2rem;font-weight:700;color:#0D1B2A;margin:1.8rem 0 .8rem}}
-    p{{font-size:1.05rem;margin-bottom:1.3rem;color:#2d3748}}
-    strong{{color:#0D1B2A;font-weight:600}}
-    ul,ol{{margin:0 0 1.3rem 1.6rem}}
-    li{{font-size:1.05rem;color:#2d3748;margin-bottom:.4rem}}
+    .section-label{{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#21bae7;margin-bottom:16px;background:rgba(33,186,231,.08);padding:4px 12px;border-radius:4px}}
 
-    .intro-highlight{{background:linear-gradient(105deg,#e6f7fb,#fff);padding:1.4rem 1.8rem;border-radius:14px;border-left:5px solid #00BCD4;margin:1.8rem 0 2rem;font-weight:500;color:#0D1B2A;font-size:1.05rem}}
+    h2{{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-0.02em;margin-bottom:24px}}
+    h3{{font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:12px}}
+    p{{font-size:1.05rem;color:#bfbfbf;line-height:1.75;margin-bottom:1.2rem}}
+    strong{{color:#fff;font-weight:600}}
+    ul,ol{{margin:0 0 1.5rem 1.5rem;color:#bfbfbf}}
+    li{{font-size:1.02rem;margin-bottom:.5rem;line-height:1.65}}
+    li::marker{{color:#21bae7}}
 
-    .insight-box{{background:#0D1B2A;color:#fff;border-radius:20px;padding:2rem;margin:2.8rem 0;position:relative;box-shadow:0 18px 30px -10px rgba(0,188,212,0.2)}}
-    .insight-box::before{{content:"\201C";font-size:5rem;color:#00BCD4;position:absolute;top:-15px;left:20px;opacity:.8;line-height:1;font-family:Georgia,serif}}
-    .insight-box p{{color:#e2e8f0;font-size:1.2rem;font-style:italic;margin:0;padding-left:1rem;border-left:3px solid #00BCD4}}
-    .insight-label{{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;font-weight:700;color:#00BCD4;margin-bottom:.5rem;display:block}}
+    /* ── CARDS ── */
+    .card{{background:#141414;border:1px solid rgba(33,186,231,.14);border-radius:16px;padding:28px;transition:border-color .3s}}
+    .card:hover{{border-color:rgba(33,186,231,.30)}}
+    .card h3{{margin-bottom:8px}}
+    .card p{{font-size:.98rem;margin-bottom:0}}
 
-    /* CTA */
-    .cta-section{{border:2px solid #00BCD4;border-radius:24px;padding:2.4rem;margin:2.8rem 0 1.5rem;background:linear-gradient(to right,#fff,#f0fcff);text-align:center;box-shadow:0 10px 25px -8px rgba(0,188,212,.25)}}
-    .cta-section h3{{font-size:1.8rem;font-weight:700;color:#0D1B2A;margin-bottom:.6rem}}
-    .cta-section p{{font-size:1.05rem;color:#2d3748;margin-bottom:1.6rem}}
-    .cta-button{{display:inline-block;background:#00BCD4;color:#0D1B2A;font-weight:700;font-size:1.05rem;padding:13px 32px;border-radius:50px;text-decoration:none;letter-spacing:.02em;transition:.25s;border:2px solid #00BCD4}}
-    .cta-button:hover{{background:#0097A7;border-color:#0097A7}}
-    .cta-button-sec{{display:inline-block;margin-left:12px;color:#0D1B2A;font-weight:600;font-size:1rem;padding:13px 28px;border-radius:50px;text-decoration:none;border:2px solid #0D1B2A;transition:.25s}}
-    .cta-button-sec:hover{{background:#0D1B2A;color:#fff}}
+    /* ── GRIDS ── */
+    .grid-2{{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}}
+    .grid-3{{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}}
+    .grid-4{{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}}
+    @media(max-width:768px){{.grid-2,.grid-3,.grid-4{{grid-template-columns:1fr}}}}
 
-    /* FOOTER */
-    footer{{background:#0D1B2A;border-top:1px solid rgba(0,188,212,0.15);padding:48px 5% 32px}}
+    /* ── STATS ── */
+    .stat-number{{font-family:'SF Mono','Fira Code','Cascadia Code',monospace;font-size:2.2rem;font-weight:700;color:#21bae7;line-height:1.1;margin-bottom:6px}}
+    .stat-label{{font-size:.85rem;color:#888}}
+
+    /* ── QUOTE ── */
+    .quote-block{{background:#0a0a0a;border-left:3px solid #21bae7;border-radius:0 12px 12px 0;padding:24px 28px;margin:32px 0}}
+    .quote-block p{{font-size:1.1rem;color:#e0e0e0;font-style:italic;margin-bottom:8px}}
+    .quote-block .quote-author{{font-size:.85rem;color:#888;font-style:normal}}
+
+    /* ── DIVIDER ── */
+    .divider{{width:100%;height:1px;background:rgba(33,186,231,.10);margin:0}}
+
+    /* ── CTA BLOCK ── */
+    .cta-block{{background:linear-gradient(135deg,rgba(33,186,231,.06),rgba(33,186,231,.02));border:1px solid rgba(33,186,231,.18);border-radius:24px;padding:48px;text-align:center;margin:20px 0}}
+    .cta-block h2{{margin-bottom:12px}}
+    .cta-block p{{max-width:600px;margin:0 auto 28px;font-size:1.05rem}}
+    .cta-block .btn-row{{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}}
+
+    .cta-button{{display:inline-block;background:#21bae7;color:#000;font-weight:700;font-size:1rem;padding:14px 36px;border-radius:50px;text-decoration:none;letter-spacing:.02em;transition:all .25s;border:2px solid #21bae7}}
+    .cta-button:hover{{background:#1aa3cc;border-color:#1aa3cc;transform:translateY(-1px)}}
+
+    .cta-button-ghost{{display:inline-block;color:#fff;font-weight:600;font-size:1rem;padding:14px 36px;border-radius:50px;text-decoration:none;border:2px solid rgba(255,255,255,.25);transition:all .25s}}
+    .cta-button-ghost:hover{{border-color:#21bae7;color:#21bae7;transform:translateY(-1px)}}
+
+    /* ── FAQ ── */
+    details{{background:#141414;border:1px solid rgba(33,186,231,.12);border-radius:12px;padding:0;margin-bottom:10px;overflow:hidden;transition:border-color .2s}}
+    details:hover{{border-color:rgba(33,186,231,.25)}}
+    details[open]{{border-color:rgba(33,186,231,.30)}}
+    summary{{padding:18px 24px;font-weight:600;font-size:1rem;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;user-select:none}}
+    summary::-webkit-details-marker{{display:none}}
+    summary::after{{content:"+";font-size:1.3rem;color:#21bae7;font-weight:400;transition:transform .2s}}
+    details[open] summary::after{{content:"\2212"}}
+    details .faq-answer{{padding:0 24px 20px;color:#bfbfbf;font-size:.98rem;line-height:1.7}}
+
+    /* ── FOOTER ── */
+    footer{{background:#000;border-top:1px solid rgba(33,186,231,.10);padding:56px max(5vw,24px) 32px}}
     .footer-inner{{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}}
-    .footer-brand img{{height:40px;margin-bottom:14px}}
-    .footer-brand p{{color:#7FA8BE;font-size:13px;line-height:1.6}}
-    .footer-col h4{{color:#E8F4F8;font-size:13px;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.8px}}
-    .footer-col ul{{list-style:none}}
+    .footer-brand img{{height:40px;width:auto;object-fit:contain;margin-bottom:14px}}
+    .footer-brand p{{color:#888;font-size:13px;line-height:1.6}}
+    .footer-col h4{{color:#fff;font-size:12px;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.8px}}
+    .footer-col ul{{list-style:none;margin:0}}
     .footer-col ul li{{margin-bottom:8px}}
-    .footer-col ul li a{{color:#7FA8BE;text-decoration:none;font-size:13px;transition:.2s}}
-    .footer-col ul li a:hover{{color:#00BCD4}}
-    .footer-bottom{{max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}}
-    .footer-bottom p{{color:#7FA8BE;font-size:12px}}
-    .social-links{{display:flex;gap:12px}}
-    .social-links a{{color:#7FA8BE;font-size:13px;text-decoration:none;transition:.2s}}
-    .social-links a:hover{{color:#00BCD4}}
-    @media(max-width:700px){{.footer-inner{{grid-template-columns:1fr 1fr}}.footer-brand{{grid-column:1/-1}}}}
+    .footer-col ul li a{{color:#888;text-decoration:none;font-size:13px;transition:color .2s}}
+    .footer-col ul li a:hover{{color:#21bae7}}
+    .footer-bottom{{max-width:1100px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}}
+    .footer-bottom p{{color:#666;font-size:12px}}
+    .social-links{{display:flex;gap:14px}}
+    .social-links a{{color:#888;font-size:13px;text-decoration:none;transition:color .2s}}
+    .social-links a:hover{{color:#21bae7}}
+    @media(max-width:768px){{.footer-inner{{grid-template-columns:1fr 1fr}}.footer-brand{{grid-column:1/-1}}}}
+
+    /* ── UTILS ── */
+    .text-center{{text-align:center}}
+    .mt-0{{margin-top:0}}
+    .mb-0{{margin-bottom:0}}
   </style>
 </head>
 <body>
@@ -179,7 +219,7 @@ ARTICLE_HTML_TEMPLATE = """<!DOCTYPE html>
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img src="https://grupolmtech.com.br/images/logo_secondary.png" alt="Inside Data Consultoria"/>
+    <img src="https://grupolmtech.com.br/images/logo_secondary.png" alt="Inside Data Consultoria" width="180" height="32" style="height:32px;width:auto;object-fit:contain"/>
   </div>
   <ul class="nav-links">
     <li><a href="https://grupolmtech.com.br/insidedata#about">Sobre</a></li>
@@ -194,27 +234,26 @@ ARTICLE_HTML_TEMPLATE = """<!DOCTYPE html>
   <div class="hero-inner">
     <div class="hero-badge">{category}</div>
     <h1>{h1_title}</h1>
+    <p class="hero-subtitle">{hero_subtitle}</p>
     <div class="hero-meta">
-      <span>📅 {publish_date}</span>
-      <span>⏱ {read_time} min de leitura</span>
-      <span>✍️ Inside Data</span>
+      <span>{publish_date}</span>
+      <span>{read_time} min de leitura</span>
+      <span>Inside Data</span>
     </div>
   </div>
 </div>
 
-<!-- ARTICLE -->
-<div class="article-wrap">
-  <div class="article-body">
-    {article_body}
-  </div>
-</div>
+<!-- PAGE CONTENT (gerado pelo modelo) -->
+<main class="page-content">
+  {article_body}
+</main>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="https://grupolmtech.com.br/images/logo_primary.png" alt="Inside Data"/>
-      <p>Transformando dados em inteligência de negócios e automatizando processos.</p>
+      <img src="https://grupolmtech.com.br/images/logo_primary.png" alt="Inside Data" width="180" height="40" style="height:40px;width:auto;object-fit:contain"/>
+      <p>Consultoria especializada em Arquitetura, Engenharia e Governança de Dados. Posicionamento agnóstico em cloud com foco em resultado mensurável.</p>
     </div>
     <div class="footer-col">
       <h4>Serviços</h4>
@@ -222,7 +261,7 @@ ARTICLE_HTML_TEMPLATE = """<!DOCTYPE html>
         <li><a href="https://grupolmtech.com.br/insidedata#services">Arquitetura de Dados</a></li>
         <li><a href="https://grupolmtech.com.br/insidedata#services">Engenharia de Dados</a></li>
         <li><a href="https://grupolmtech.com.br/insidedata#services">Governança & LGPD</a></li>
-        <li><a href="https://grupolmtech.com.br/insidedata#services">DataOps & Cloud</a></li>
+        <li><a href="https://grupolmtech.com.br/insidedata#services">FinOps & Cloud</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -246,9 +285,9 @@ ARTICLE_HTML_TEMPLATE = """<!DOCTYPE html>
   <div class="footer-bottom">
     <p>© {year} Inside Data Consultoria. Todos os direitos reservados. | CNPJ: 55.299.485/0001-58</p>
     <div class="social-links">
-      <a href="https://www.linkedin.com/company/insidedatabr/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/insidedatabr" target="_blank">GitHub</a>
-      <a href="https://www.instagram.com/insidedata.br/" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/company/insidedatabr/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/insidedatabr" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.instagram.com/insidedata.br/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
 </footer>
@@ -306,12 +345,14 @@ def clean_html(raw: str) -> str:
     return raw.strip()
 
 def build_full_html(article_body: str, meta: dict) -> str:
-    """Injeta o corpo do artigo no template fiel ao site."""
+    """Injeta o corpo da landing page no template."""
     return ARTICLE_HTML_TEMPLATE.format(
         seo_title=meta.get("seo_title", meta["title"]),
         meta_description=meta.get("meta_description", ""),
         h1_title=meta["title"],
+        hero_subtitle=meta.get("hero_subtitle", ""),
         category=meta.get("category", "Blog"),
+        slug=meta.get("slug", ""),
         publish_date=datetime.now().strftime("%d/%m/%Y"),
         read_time=meta.get("read_time", "7"),
         article_body=article_body,
@@ -319,18 +360,375 @@ def build_full_html(article_body: str, meta: dict) -> str:
     )
 
 # ─── DeepSeek API ─────────────────────────────────────────────────────────────
-SYSTEM_PROMPT = """Você é especialista em SEO e content marketing B2B de tecnologia de dados no Brasil.
-A empresa é a Inside Data — consultoria de Arquitetura, Engenharia e Governança de Dados, agnóstica em cloud (AWS/Azure/GCP).
-Tom: consultivo, técnico, executivo. Target: Diretores e Heads de Dados.
-Identidade visual: background black ##000000, destaque navy #21bae7, texto #ffffff
-Contato: contato@grupolmtech.com.br | (31) 98640-2114 | grupolmtech.com.br/insidedata
+# ═══════════════════════════════════════════════════════════════════════════════
+# PROMPT EM 5 CAMADAS — Inside Data Authority Page Generator
+# ═══════════════════════════════════════════════════════════════════════════════
 
-IMPORTANTE: Retorne APENAS o corpo interno do artigo em HTML puro — sem DOCTYPE, sem <html>, sem <head>, sem <body>, sem <nav>, sem <footer>.
-Retorne somente o conteúdo que vai dentro do <div class="article-body">.
-Use as classes CSS disponíveis: intro-highlight, insight-box, insight-label, cta-section, cta-button, cta-button-sec.
-NÃO use markdown. NÃO use fences de código. Retorne HTML direto. não use travessões ou aspas para destacar palavras. Seja direto e objetivo, sem rodeios, use linguagem simples e clara, focada em transmitir valor para o leitor executivo interessado em dados e cloud.
-o perfil de leitor que vamos atrair é de executivos e gestores de dados, cloud e tecnologia, que buscam soluções práticas e estratégicas para seus desafios de dados.
-O artigo deve ser otimizado para SEO, com foco na keyword principal, e conter uma estrutura clara e escaneável, com introdução, desenvolvimento em seções e conclusão com CTA."""
+# ─── CAMADA 1: PERSONA ───────────────────────────────────────────────────────
+PERSONA_LAYER = """
+Você é Principal Data Architect e Consultor Sênior da Inside Data.
+
+Possui mais de 20 anos implementando plataformas modernas de dados em grandes empresas.
+Já liderou projetos de arquitetura, engenharia e governança em dezenas de organizações
+dos mais variados setores: financeiro, varejo, indústria, saúde, logística e governo.
+
+Especialista em:
+• Databricks
+• Snowflake
+• Engenharia de Dados
+• Data Lakehouse
+• IA aplicada a dados
+• Cloud FinOps
+• Governança de Dados
+• BI e Analytics
+• Arquitetura Corporativa de Dados
+• Modernização de plataformas legadas
+
+Seu trabalho NÃO é escrever artigos de blog.
+Seu trabalho é demonstrar autoridade técnica da Inside Data e convencer um executivo
+de que existe um caminho mais inteligente para resolver seus problemas de dados.
+
+Você escreve como uma consultoria premium — no nível de McKinsey, BCG, Accenture, Deloitte.
+Seu conteúdo deve parecer um white paper executivo, não um post de blog.
+"""
+
+# ─── CAMADA 2: EDITORIAL ─────────────────────────────────────────────────────
+EDITORIAL_LAYER = """
+## PÚBLICO-ALVO (ESCREVA EXCLUSIVAMENTE PARA ELES)
+
+Seu leitor é:
+• CIO — Chief Information Officer
+• CTO — Chief Technology Officer
+• CDO — Chief Data Officer
+• Diretor de Dados e Analytics
+• Head de Engenharia de Dados
+• Gerente de Plataformas Cloud
+• Arquiteto Corporativo
+• Head de DataOps e Infraestrutura
+
+Seu leitor tem 10+ anos de experiência em tecnologia.
+Ele conhece os conceitos. Ele já leu centenas de artigos.
+Ele não precisa de definições. Ele precisa de profundidade, diagnóstico e caminhos.
+
+## REGRAS DE OURO — NUNCA FAÇA ISSO
+
+NUNCA escreva para iniciantes.
+NUNCA explique conceitos básicos.
+NUNCA defina o que é Data Lake, Lakehouse, Data Warehouse, ETL, ELT ou BI.
+NUNCA explique IA, Machine Learning ou GenAI de forma genérica e introdutória.
+NUNCA use frases de blogueiro repetitivo.
+
+## PALAVRAS E FRASES PROIBIDAS (NUNCA USE NENHUMA DESTAS)
+
+Proibido:
+• "A importância dos dados"
+• "O poder da IA" / "O poder dos dados"
+• "No mundo atual" / "No mundo de hoje"
+• "Vivemos uma transformação digital"
+• "As empresas precisam inovar"
+• "Os dados são o novo petróleo"
+• "Na era da informação"
+• "Cada vez mais"
+• "A tecnologia avança rapidamente"
+• "É fundamental" / "É essencial" / "É crucial"
+• "Sem dúvida"
+• "Podemos afirmar que"
+• "Não é novidade que"
+• "Estamos vivendo"
+• "O cenário atual"
+• "Desafios do mercado"
+
+Se você sentir vontade de usar qualquer uma dessas frases, pare e reescreva com
+um exemplo concreto de projeto.
+
+## TOM E VOZ
+
+• Consultivo, não professoral
+• Técnico, não acadêmico
+• Executivo, não marketeiro
+• Direto, não prolixo
+• Experiente, não teórico
+• Estratégico, não tático
+
+Você não está "explicando" nada. Você está compartilhando achados de campo.
+
+## REGRA DE EXPERIÊNCIA
+
+Sempre escreva como alguém que já participou de dezenas de projetos reais.
+Cada afirmação técnica deve vir acompanhada de um exemplo de campo.
+
+Exemplos do tom correto:
+"Em muitos projetos encontramos clusters Databricks superdimensionados
+consumindo recursos durante toda a madrugada sem necessidade operacional."
+
+"Nossa experiência mostra que tabelas Snowflake sem estratégia de clustering
+costumam aumentar significativamente o custo conforme o volume cresce."
+
+"É comum encontrar pipelines que executam centenas de transformações
+desnecessárias apenas porque nunca foram revisados."
+
+"Em diagnósticos de FinOps, identificamos que em média 35% do spend mensal
+de cloud para dados é evitável com ajustes de arquitetura e governança."
+
+## REGRA DE EXEMPLOS REAIS
+
+Cada seção precisa conter pelo menos um cenário concreto encontrado em empresas.
+Nunca escrever apenas teoria. Sempre ancorar em experiência de campo.
+
+Exemplo ERRADO:
+"Databricks melhora a performance de processamento de dados."
+
+Exemplo CERTO:
+"Em uma indústria com 12 milhões de registros diários de sensores IoT,
+encontramos 47 notebooks Spark executando independentemente, muitos deles
+processando as mesmas bases repetidas vezes. Após reorganizar os pipelines,
+eliminar duplicidades e implementar orquestração por DAGs, o tempo total
+de processamento caiu de 9 horas para 42 minutos, e o custo mensal com
+DBUs reduziu 62%."
+
+## VOCÊ NÃO VENDE TECNOLOGIA — VOCÊ VENDE DIAGNÓSTICO
+
+Nunca diga:
+"Contrate Databricks."
+"Use Snowflake."
+"Migre para Cloud."
+"Implemente IA."
+
+Sempre diga:
+"Primeiro avaliamos a arquitetura atual."
+"Depois identificamos gargalos e desperdícios."
+"Só então propomos um roadmap de melhorias."
+"A tecnologia é consequência do diagnóstico, nunca o ponto de partida."
+
+A Inside Data não vende ferramentas. Vende conhecimento especializado e método.
+"""
+
+# ─── CAMADA 3: DESIGN SYSTEM ─────────────────────────────────────────────────
+DESIGN_SYSTEM_LAYER = """
+## IDENTIDADE VISUAL OBRIGATÓRIA — LANDING PAGE DE CONSULTORIA PREMIUM
+
+Toda página deve transmitir a aparência de uma consultoria premium de tecnologia
+— no nível de McKinsey, BCG, Accenture, Deloitte.
+
+NUNCA gerar aparência de blog WordPress, Medium, TechCrunch ou artigo genérico.
+
+### PALETA DE CORES (USO OBRIGATÓRIO)
+
+• Fundo principal (body/sections alternadas): #000000
+• Superfícies e seções: #0a0a0a
+• Cards e blocos de destaque: #141414
+• Bordas sutis: rgba(33, 186, 231, 0.18)
+• Bordas em hover/destaque: rgba(33, 186, 231, 0.30)
+• Azul institucional Inside Data: #21bae7
+• Texto principal (headings, body): #ffffff
+• Texto secundário (metadados, notas): #bfbfbf
+• Texto terciário (legendas): #888888
+• Gradientes: sempre usar #21bae7 como cor âncora
+
+### TIPOGRAFIA
+
+• Família: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif
+• Headings: font-weight 700, letter-spacing -0.02em
+• Body: font-size 1.05rem, line-height 1.75, font-weight 400
+• Código/números: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace
+
+### ESPAÇAMENTO E LAYOUT
+
+• Container máximo: 960px centralizado
+• Padding lateral em mobile: 5vw (aprox 20px)
+• Espaçamento entre seções: 80px a 120px
+• Espaçamento interno de seções: 64px a 80px
+• Border-radius padrão: 16px
+• Border-radius de cards internos: 12px
+• Border-radius de botões: 50px (pill shape)
+• Sombras: discretas, jamais exageradas
+
+### COMPONENTES REUTILIZÁVEIS
+
+Use estas classes CSS nos elementos que gerar (elas já existem no template):
+
+• .section — seção padrão com padding e max-width
+• .section-dark — seção com fundo #0a0a0a
+• .section-label — label superior com azul institucional (ex: "PROBLEMA", "DIAGNÓSTICO")
+• .card — card com fundo #141414, borda sutil, border-radius 12px
+• .stat-number — números grandes com #21bae7 e font-mono
+• .stat-label — label abaixo de números
+• .quote-block — citação/depoimento estilizada
+• .cta-button — botão CTA primário (fundo #21bae7, texto #000)
+• .cta-button-ghost — botão CTA secundário (borda #21bae7, texto #fff)
+• .divider — linha divisória sutil entre seções
+• .grid-2, .grid-3, .grid-4 — grids responsivos
+
+### LOGO DA INSIDE DATA
+
+A logo da Inside Data deve sempre:
+• Ser inserida via <img> com src="https://grupolmtech.com.br/images/logo_secondary.png"
+• Permanecer proporcional (nunca distorcer)
+• Nunca ultrapassar 200px de largura
+• Usar height="auto" e object-fit: contain
+• Ter padding adequado ao redor
+• Manter boa legibilidade em desktop e mobile
+"""
+
+# ─── CAMADA 4: CONVERSÃO ─────────────────────────────────────────────────────
+CONVERSION_LAYER = """
+## DNA INSIDE DATA — ATUAÇÃO OBRIGATÓRIA EM TODO CONTEÚDO
+
+Toda landing page deve reforçar que a Inside Data atua em:
+
+• Arquitetura de Dados (desenho, seleção de tecnologias, padrões)
+• Engenharia de Dados (pipelines, ingestão, transformação, orquestração)
+• Governança de Dados (catálogo, qualidade, linhagem, metadados)
+• FinOps para Dados (otimização de custos cloud, redução de spend)
+• IA Aplicada a Dados (casos de uso reais, não hype)
+• Modernização de Plataformas (legado → cloud, migrações)
+• Observabilidade de Dados (monitoramento, alertas, SLAs)
+• Performance e Tuning (SQL, Spark, clusters, queries)
+• Capacitação de Equipes (treinamento técnico, mentoria)
+• Sustentação e Operação Assistida (managed services)
+
+Nunca vender APENAS ferramentas.
+Sempre vender conhecimento especializado, método e resultado mensurável.
+
+## OBJEÇÕES A ENDEREÇAR IMPLICITAMENTE
+
+O conteúdo deve naturalmente responder estas objeções sem parecer defensivo:
+• "Já temos time interno de dados."
+• "Já usamos [Databricks/Snowflake/AWS]."
+• "Consultoria é cara e não entrega."
+• "Isso não é prioridade agora."
+• "Nosso case é muito específico."
+
+## ESTRUTURA DE CTA (CALL TO ACTION)
+
+No mínimo 2 CTAs por página:
+1. Um CTA de meio de página — diagnóstico ou avaliação
+2. Um CTA de fim de página — contato direto
+
+CTAs devem focar em:
+• "Agendar diagnóstico de arquitetura"
+• "Solicitar avaliação de FinOps"
+• "Falar com um especialista"
+• "Receber uma análise preliminar"
+
+NUNCA usar CTAs genéricos como "Saiba mais" ou "Clique aqui".
+Sempre usar verbos de ação com valor percebido claro.
+
+## PROVA DE AUTORIDADE (USAR NATURALMENTE)
+
+• Mencionar experiência acumulada em projetos reais
+• Citar cenários complexos já resolvidos
+• Demonstrar profundidade técnica sem arrogância
+• Usar dados e métricas de projetos (sem expor clientes)
+"""
+
+# ─── CAMADA 5: TÉCNICA ───────────────────────────────────────────────────────
+TECHNICAL_LAYER = """
+## FORMATO DE SAÍDA
+
+IMPORTANTE: Retorne APENAS o conteúdo HTML que vai dentro da tag <main class="page-content">.
+NÃO inclua DOCTYPE, <html>, <head>, <body>, <nav>, <footer>.
+
+O template já possui:
+• <nav> com logo e links
+• Hero wrapper estrutural
+• <main class="page-content"> ← seu conteúdo entra AQUI
+• <footer> completo
+
+## ESTRUTURA OBRIGATÓRIA DA LANDING PAGE
+
+Gere o conteúdo nesta ordem exata, usando as classes CSS fornecidas:
+
+1. HERO CONTENT — Dentro de <div class="hero-content">:
+   - <p class="section-label"> com a categoria/tema
+   - <h1> com o título principal (incluir keyword)
+   - <p class="hero-subtitle"> subtítulo de 1-2 frases com gancho executivo
+   - Metadados: data, tempo de leitura
+
+2. PROBLEMA — <section class="section"><div class="container">:
+   - <p class="section-label">O PROBLEMA</p>
+   - <h2> descrevendo o problema real (com exemplos de campo)
+   - Parágrafos com dados concretos de projetos
+
+3. CONSEQUÊNCIAS — <section class="section section-dark"><div class="container">:
+   - <p class="section-label">O CUSTO DE NÃO AGIR</p>
+   - <h2> impactos financeiros e operacionais
+   - 3-4 cards (.card) com consequências específicas
+
+4. DIAGNÓSTICO — <section class="section"><div class="container">:
+   - <p class="section-label">COMO RESOLVER</p>
+   - <h2> abordagem metodológica
+   - Exemplos de diagnóstico e intervenção
+
+5. ATUAÇÃO INSIDE DATA — <section class="section section-dark"><div class="container">:
+   - <p class="section-label">COMO A INSIDE DATA ATUA</p>
+   - <h2> metodologia e diferenciais
+   - Grid de serviços aplicáveis ao tema
+
+6. CASES — <section class="section"><div class="container">:
+   - <p class="section-label">CENÁRIOS REAIS</p>
+   - <h2> situações que encontramos
+   - 2-3 parágrafos com cenários de campo (sem nomes de clientes)
+
+7. BENEFÍCIOS — <section class="section section-dark"><div class="container">:
+   - <p class="section-label">RESULTADOS ESPERADOS</p>
+   - Grid de 3-4 benefícios com métricas
+
+8. CTA PRINCIPAL — <section class="section"><div class="container">:
+   - <div class="cta-block"> com h2, parágrafo e 2 botões:
+   - <a class="cta-button" href="https://grupolmtech.com.br/insidedata#contact">Agendar diagnóstico</a>
+   - <a class="cta-button-ghost" href="https://grupolmtech.com.br/insidedata#services">Conhecer serviços</a>
+
+9. FAQ — <section class="section section-dark"><div class="container">:
+   - <p class="section-label">PERGUNTAS FREQUENTES</p>
+   - 4-5 perguntas e respostas em formato <details><summary>
+
+10. SCHEMA SEO — Dentro de <script type="application/ld+json">:
+    - FAQPage schema com as perguntas do FAQ
+    - Organization schema da Inside Data
+    - WebPage schema
+
+## REGRAS TÉCNICAS
+
+• HTML válido e semanticamente correto
+• Todas as classes CSS devem ser as fornecidas pelo template
+• Imagens: usar apenas a logo fornecida. Não inventar imagens.
+• Links: sempre abrir na mesma aba (não usar target="_blank" exceto em redes sociais)
+• NÃO usar markdown. NÃO usar fences de código (```). Retorne APENAS HTML.
+• Não usar emojis no conteúdo (apenas nos metadados de data se apropriado)
+• Não usar &nbsp; ou &mdash; como muletas de espaçamento
+• O conteúdo deve ter entre 1500 e 2500 palavras
+"""
+
+# ─── SYSTEM PROMPT COMPLETO ──────────────────────────────────────────────────
+SYSTEM_PROMPT = f"""{PERSONA_LAYER}
+
+---
+
+{EDITORIAL_LAYER}
+
+---
+
+{DESIGN_SYSTEM_LAYER}
+
+---
+
+{CONVERSION_LAYER}
+
+---
+
+{TECHNICAL_LAYER}
+
+---
+
+CONTATO INSIDE DATA:
+• Email: contato@grupolmtech.com.br
+• WhatsApp: (31) 98640-2114
+• Site: grupolmtech.com.br/insidedata
+• LinkedIn: linkedin.com/company/insidedatabr
+• Localização: Lagoa Santa — MG
+• CNPJ: 55.299.485/0001-58
+"""
 
 def call_deepseek(user_prompt: str) -> str:
     client = OpenAI(
@@ -339,7 +737,7 @@ def call_deepseek(user_prompt: str) -> str:
     )
     response = client.chat.completions.create(
         model="deepseek-v4-pro",
-        max_tokens=2500,
+        max_tokens=4000,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user",   "content": user_prompt},
@@ -348,47 +746,54 @@ def call_deepseek(user_prompt: str) -> str:
     return clean_html(response.choices[0].message.content)
 
 def generate_from_idea(idea: dict) -> str:
-    prompt = f"""Gere o corpo de um artigo de blog completo e otimizado para SEO sobre: "{idea['title']}"
-Keyword principal: "{idea['keyword']}" | Intenção: {idea['intent']} | Categoria: {idea['category']}
+    """Gera landing page de autoridade a partir de pauta mapeada."""
+    prompt = f"""Gere uma LANDING PAGE DE AUTORIDADE (NÃO um artigo de blog) sobre:
 
-Estrutura obrigatória do corpo:
-1. <div class="intro-highlight"> com parágrafo de introdução impactante
-2. Parágrafo de contexto executivo
-3. Três seções <h2> com conteúdo técnico real, exemplos práticos e listas <ul>
-4. <div class="insight-box"> com <span class="insight-label">Insight Inside Data</span> e um insight estratégico
-5. <div class="cta-section"> com h3 "Pronto para estruturar seus dados?", parágrafo e dois links:
-   - <a class="cta-button" href="https://grupolmtech.com.br/insidedata#contact">Agendar diagnóstico gratuito</a>
-   - <a class="cta-button-sec" href="https://grupolmtech.com.br/downloads/business-case-onepager.pdf">Baixar one-pager</a>"""
+TEMA: "{idea['title']}"
+KEYWORD PRINCIPAL: "{idea['keyword']}"
+INTENÇÃO DE BUSCA: {idea['intent']}
+CATEGORIA: {idea['category']}
+
+Aplique TODAS as regras do system prompt.
+Siga a estrutura obrigatória de 10 seções (Hero Content até Schema SEO).
+Inclua exemplos reais de campo em cada seção — nunca apenas teoria.
+Use as classes CSS fornecidas (.section, .section-dark, .section-label, .card, .grid-2, .grid-3, .cta-button, .cta-button-ghost, .quote-block, details/summary para FAQ).
+Gere conteúdo proprietário — nada de frases prontas de blog."""
     body = call_deepseek(prompt)
     return build_full_html(body, {
         "title": idea["title"],
-        "seo_title": idea["title"],
-        "meta_description": f"Saiba como a Inside Data pode ajudar sua empresa com {idea['keyword']}. Consultoria agnóstica em cloud, LGPD e governança de dados.",
+        "seo_title": f"{idea['title']} | Inside Data",
+        "meta_description": f"Diagnóstico especializado da Inside Data sobre {idea['keyword']}. Abordagem consultiva com exemplos reais de arquitetura, engenharia e governança de dados.",
+        "hero_subtitle": f"Um diagnóstico técnico sobre {idea['keyword']} baseado em mais de 20 anos de projetos reais de dados.",
         "category": idea["category"],
-        "read_time": "7",
+        "slug": idea["slug"],
+        "read_time": "8",
     })
 
 def generate_from_chat(topic: str) -> tuple[str, str]:
-    """Gera artigo a partir de tema livre. Retorna (html_completo, slug)."""
-    prompt = f"""Gere o corpo de um artigo de blog completo e otimizado para SEO sobre o tema: "{topic}"
-Adapte keyword, intenção e categoria automaticamente para o público da Inside Data.
-
-Estrutura obrigatória do corpo:
-1. <div class="intro-highlight"> com parágrafo de introdução impactante
-2. Parágrafo de contexto executivo
-3. Três seções <h2> com conteúdo técnico real, exemplos práticos e listas <ul>
-4. <div class="insight-box"> com <span class="insight-label">Insight Inside Data</span> e um insight estratégico
-5. <div class="cta-section"> com h3 "Pronto para estruturar seus dados?", parágrafo e dois links:
-   - <a class="cta-button" href="https://grupolmtech.com.br/insidedata#contact">Agendar diagnóstico gratuito</a>
-   - <a class="cta-button-sec" href="https://grupolmtech.com.br/downloads/business-case-onepager.pdf">Baixar one-pager</a>"""
-    body = call_deepseek(prompt)
+    """Gera landing page de autoridade a partir de tema livre. Retorna (html_completo, slug)."""
     slug = re.sub(r"[^a-z0-9]+", "-", topic.lower().strip())[:60].strip("-")
+    prompt = f"""Gere uma LANDING PAGE DE AUTORIDADE (NÃO um artigo de blog) sobre:
+
+TEMA: "{topic}"
+
+Você deve adaptar keyword, intenção, categoria e subtítulo automaticamente
+para o público executivo da Inside Data.
+
+Aplique TODAS as regras do system prompt.
+Siga a estrutura obrigatória de 10 seções (Hero Content até Schema SEO).
+Inclua exemplos reais de campo em cada seção — nunca apenas teoria.
+Use as classes CSS fornecidas (.section, .section-dark, .section-label, .card, .grid-2, .grid-3, .cta-button, .cta-button-ghost, .quote-block, details/summary para FAQ).
+Gere conteúdo proprietário — nada de frases prontas de blog."""
+    body = call_deepseek(prompt)
     html = build_full_html(body, {
         "title": topic,
-        "seo_title": topic,
-        "meta_description": f"Saiba mais sobre {topic} com a Inside Data, consultoria especializada em dados e cloud.",
-        "category": "Blog",
-        "read_time": "7",
+        "seo_title": f"{topic} | Inside Data",
+        "meta_description": f"Análise especializada da Inside Data sobre {topic}. Diagnóstico técnico com exemplos reais de arquitetura de dados.",
+        "hero_subtitle": f"Uma análise técnica sobre {topic} baseada em projetos reais de consultoria em dados.",
+        "category": "Insight",
+        "slug": slug,
+        "read_time": "8",
     })
     return html, slug
 
@@ -476,7 +881,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "Visão Geral",
     "Concorrentes",
     "Pautas SEO",
-    "Gerar Artigo Livre",
+    "Gerar Landing Page",
     "Brand Brief",
 ])
 
@@ -486,7 +891,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 with tab1:
     c1, c2, c3 = st.columns(3)
     c1.metric("Tráfego Potencial",     "+14.260", "visitantes/mês")
-    c2.metric("Pautas Identificadas",  "5",        "artigos estratégicos")
+    c2.metric("Pautas Identificadas",  "5",        "landing pages estratégicas")
     c3.metric("Concorrentes",          "5",        "mapeados")
     st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)
     st.markdown('<div class="id-card"><div class="sec-title">Top Content Opportunities</div>', unsafe_allow_html=True)
@@ -507,22 +912,22 @@ with tab1:
 with tab2:
     for i, c in enumerate(COMPETITORS):
         c1, c2, c3, c4 = st.columns([0.5, 4, 1.5, 1.5])
-        c1.markdown(f"<span style='font-family:Space Mono,monospace;color:#7FA8BE;font-size:12px'>#{str(i+1).zfill(2)}</span>", unsafe_allow_html=True)
-        c2.markdown(f"<div style='font-weight:600;font-size:15px'>{c['name']}</div><div style='color:#7FA8BE;font-size:12px'>{c['domain']}</div>", unsafe_allow_html=True)
-        c3.markdown(f"<div style='font-family:Space Mono,monospace;color:#00BCD4;font-weight:700;font-size:18px;text-align:center'>{c['da']}</div><div style='color:#7FA8BE;font-size:10px;text-align:center'>Domain Auth.</div>", unsafe_allow_html=True)
+        c1.markdown(f"<span style='font-family:Space Mono,monospace;color:#888888;font-size:12px'>#{str(i+1).zfill(2)}</span>", unsafe_allow_html=True)
+        c2.markdown(f"<div style='font-weight:600;font-size:15px'>{c['name']}</div><div style='color:#888888;font-size:12px'>{c['domain']}</div>", unsafe_allow_html=True)
+        c3.markdown(f"<div style='font-family:Space Mono,monospace;color:#21bae7;font-weight:700;font-size:18px;text-align:center'>{c['da']}</div><div style='color:#888888;font-size:10px;text-align:center'>Domain Auth.</div>", unsafe_allow_html=True)
         c4.markdown(threat_badge(c["threat"]), unsafe_allow_html=True)
-        st.markdown("<hr style='border-color:rgba(0,188,212,0.1);margin:8px 0'>", unsafe_allow_html=True)
+        st.markdown("<hr style='border-color:rgba(33,186,231,0.08);margin:8px 0'>", unsafe_allow_html=True)
     st.markdown("""<div class="insight"><h4> Insight Estratégico</h4>
       <p style="font-size:14px;line-height:1.7">KPMG, Deloitte e Accenture dominam termos genéricos mas raramente produzem
       conteúdo técnico profundo em PT-BR sobre implementações reais. A Inside Data tem vantagem em
-      <strong style="color:#00BCD4">especificidade técnica + linguagem executiva BR</strong> — um gap que o conteúdo SEO deve explorar.</p>
+      <strong style="color:#21bae7">especificidade técnica + linguagem executiva BR</strong> — um gap que landing pages de autoridade devem explorar.</p>
     </div>""", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # TAB 3 — PAUTAS SEO (hardcoded, editáveis)
 # ══════════════════════════════════════════════════════════════════════════════
 with tab3:
-    st.markdown("<p style='color:#7FA8BE;font-size:14px;margin-bottom:20px'>Pautas mapeadas com potencial de tráfego orgânico. Gere, visualize e publique.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color:#888888;font-size:14px;margin-bottom:20px'>Pautas mapeadas com potencial de tráfego orgânico. Gere landing pages de autoridade, visualize e publique.</p>", unsafe_allow_html=True)
     for idea in IDEAS:
         st.markdown(f"""
         <div class="id-card-alt">
@@ -536,13 +941,13 @@ with tab3:
         already = idea["id"] in st.session_state.generated
         col_gen, _ = st.columns([2, 6])
         with col_gen:
-            label = "↺ REGENERAR" if already else "✦ GERAR ARTIGO"
+            label = "↺ REGENERAR" if already else "✦ GERAR LANDING PAGE"
             if st.button(label, key=f"gen_{idea['id']}"):
                 with st.spinner(f"Gerando '{idea['title']}'..."):
                     try:
                         html = generate_from_idea(idea)
                         st.session_state.generated[idea["id"]] = {"html": html, "slug": idea["slug"], "title": idea["title"]}
-                        st.success("✓ Artigo gerado!")
+                        st.success("✓ Landing page gerada!")
                         st.rerun()
                     except Exception as e:
                         st.error(f"Erro na API: {e}")
@@ -557,27 +962,27 @@ with tab3:
 # TAB 4 — CHAT LIVRE
 # ══════════════════════════════════════════════════════════════════════════════
 with tab4:
-    st.markdown("<p style='color:#7FA8BE;font-size:14px;margin-bottom:20px'>Peça qualquer artigo em linguagem natural. Ex: <em>\"post sobre data mesh para times de engenharia\"</em></p>", unsafe_allow_html=True)
+    st.markdown("<p style='color:#888888;font-size:14px;margin-bottom:20px'>Solicite uma landing page de autoridade em linguagem natural. Ex: <em>\"data mesh para times de engenharia\"</em> ou <em>\"FinOps em ambientes multi-cloud\"</em></p>", unsafe_allow_html=True)
 
     # Histórico de artigos gerados via chat
     for i, entry in enumerate(st.session_state.chat_history):
         with st.chat_message("user"):
             st.write(entry["topic"])
         with st.chat_message("assistant"):
-            st.write(f"✓ Artigo gerado: **{entry['topic']}**")
+            st.write(f"✓ Landing page gerada: **{entry['topic']}**")
             render_article_actions(f"chat_{i}", entry["topic"], entry["slug"], entry["html"])
 
     # Input
-    topic = st.chat_input("Sobre o que você quer um artigo?")
+    topic = st.chat_input("Qual tema você quer abordar na landing page?")
     if topic:
         with st.chat_message("user"):
             st.write(topic)
         with st.chat_message("assistant"):
-            with st.spinner("Gerando artigo..."):
+            with st.spinner("Gerando landing page..."):
                 try:
                     html, slug = generate_from_chat(topic)
                     st.session_state.chat_history.append({"topic": topic, "html": html, "slug": slug})
-                    st.write(f"✓ Artigo gerado: **{topic}**")
+                    st.write(f"✓ Landing page gerada: **{topic}**")
                     render_article_actions(f"chat_{len(st.session_state.chat_history)-1}", topic, slug, html)
                 except Exception as e:
                     st.error(f"Erro na API: {e}")
@@ -590,25 +995,26 @@ with tab5:
     with col_a:
         st.markdown("""<div class="id-card"><div class="sec-title">Sobre a Empresa</div>
           <p style="font-size:14px;line-height:1.75">Consultoria executiva especializada em
-          <strong style="color:#00BCD4">Arquitetura, Engenharia e Governança de Dados</strong>.
-          Diferencial: posicionamento <strong style="color:#00BCD4">agnóstico em cloud</strong> — AWS, Azure e GCP —
+          <strong style="color:#21bae7">Arquitetura, Engenharia e Governança de Dados</strong>.
+          Diferencial: posicionamento <strong style="color:#21bae7">agnóstico em cloud</strong> — AWS, Azure e GCP —
           com foco em clareza operacional, segurança, compliance e valor mensurável.</p>
         </div>""", unsafe_allow_html=True)
         st.markdown("""<div class="id-card"><div class="sec-title">Tom & Voz</div>
           <p style="font-size:14px;line-height:1.7">Comunicação <strong>consultiva, técnica e executiva</strong>.
-          Autoridade, objetividade e precisão — maturidade estratégica e profundidade de engenharia.</p>
+          Autoridade, objetividade e precisão — maturidade estratégica e profundidade de engenharia.
+          Não escrevemos artigos de blog. Produzimos <strong style="color:#21bae7">landing pages de autoridade</strong>.</p>
         </div>""", unsafe_allow_html=True)
     with col_b:
         st.markdown("""<div class="id-card"><div class="sec-title">Público-Alvo</div>
-          <p style="font-size:14px;line-height:1.7"><strong>Diretores, Heads de Dados, tecnologia, engenharia e
-          transformação digital</strong> em empresas com múltiplos sistemas e alto volume de dados.</p>
+          <p style="font-size:14px;line-height:1.7"><strong>CIOs, CTOs, CDOs, Diretores de Dados, Heads de Engenharia e
+          Arquitetos Corporativos</strong> em empresas com ambientes de dados complexos e alto volume.</p>
         </div>""", unsafe_allow_html=True)
         st.markdown('<div class="id-card"><div class="sec-title">Identidade Visual</div>', unsafe_allow_html=True)
         st.markdown("""<div class="swatch-row">
-          <div class="swatch"><div class="swatch-box" style="background:#0D1B2A"></div><div class="swatch-name">Navy</div><div class="swatch-hex">#0D1B2A</div></div>
-          <div class="swatch"><div class="swatch-box" style="background:#00BCD4"></div><div class="swatch-name">Cyan</div><div class="swatch-hex">#00BCD4</div></div>
-          <div class="swatch"><div class="swatch-box" style="background:#111F2E"></div><div class="swatch-name">Surface</div><div class="swatch-hex">#111F2E</div></div>
-          <div class="swatch"><div class="swatch-box" style="background:#4DD9EC"></div><div class="swatch-name">Cyan Lt</div><div class="swatch-hex">#4DD9EC</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#000000"></div><div class="swatch-name">Black</div><div class="swatch-hex">#000000</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#21bae7"></div><div class="swatch-name">Blue</div><div class="swatch-hex">#21BAE7</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#101010"></div><div class="swatch-name">Surface</div><div class="swatch-hex">#101010</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#141414"></div><div class="swatch-name">Card</div><div class="swatch-hex">#141414</div></div>
         </div>""", unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
