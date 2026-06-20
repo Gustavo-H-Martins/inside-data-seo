@@ -250,6 +250,7 @@ ARTICLE_HTML_TEMPLATE = """<!DOCTYPE html>
     <li><a href="https://grupolmtech.com.br/insidedata#about">Sobre</a></li>
     <li><a href="https://grupolmtech.com.br/insidedata#services">Serviços</a></li>
     <li><a href="https://grupolmtech.com.br/insidedata#portfolio">Portfólio</a></li>
+    <li><a href="https://grupolmtech.com.br/insidedata/blog/">Blog</a></li>
     <li><a href="https://grupolmtech.com.br/insidedata#contact" class="nav-cta">Agendar diagnóstico</a></li>
   </ul>
 </nav>
