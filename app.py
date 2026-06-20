@@ -277,7 +277,7 @@ ARTICLE_HTML_TEMPLATE = """<!DOCTYPE html>
       <h4>Contato</h4>
       <ul>
         <li><a href="mailto:contato@grupolmtech.com.br">contato@grupolmtech.com.br</a></li>
-        <li><a href="https://wa.me/5531986402114">(31) 98640-2114</a></li>
+        <li><a href="https://wa.me/5531982273761">(31) 98227-3761</a></li>
         <li><a href="#">Lagoa Santa — MG</a></li>
       </ul>
     </div>
@@ -723,7 +723,7 @@ SYSTEM_PROMPT = f"""{PERSONA_LAYER}
 
 CONTATO INSIDE DATA:
 • Email: contato@grupolmtech.com.br
-• WhatsApp: (31) 98640-2114
+• WhatsApp: (31) 98227-3761
 • Site: grupolmtech.com.br/insidedata
 • LinkedIn: linkedin.com/company/insidedatabr
 • Localização: Lagoa Santa — MG
